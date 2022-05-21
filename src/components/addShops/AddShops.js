@@ -9,7 +9,7 @@ const AddShops = () => {
             {
        storeLength.map((dt,idx)=>{
          return(
-           <div>
+           <div key={idx}>
              <p>{idx}  description : {dt.description} id : {dt.id}</p>
            </div>
          )
