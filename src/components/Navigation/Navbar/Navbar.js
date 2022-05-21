@@ -11,7 +11,7 @@ const Navbar = ({ toggle }) => {
 
             <div className="icons">
                 <div className="menu-items">
-                    <Link className="nav-link text-light Link" to="add-shops" style={{display:"flex",justifyContent: "center",alignItems: "center"}}><AiFillFolderAdd style={{fontSize: '20px'}}/>ADD SHOP</Link>
+                    <Link className="nav-link text-light Link" to="add-shops" style={{display:"flex",justifyContent: "center",alignItems: "center"}}><AiFillFolderAdd style={{fontSize: '20px'}}/>CRUD SHOP</Link>
                 </div>
                 <div className="mobile-menu-icon">
                     <FaBars onClick={toggle} />
