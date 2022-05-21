@@ -18,7 +18,7 @@ const Sidebar = ({ isopen, toggle }) => {
             </div>
             <div className="sidebar-wrapper">
                 <div className="sidebar-menu">
-                <Link className="nav-link text-light Link" to="add-shops">ADD SHOPS</Link>
+                <Link className="nav-link text-light Link" to="add-shops">ADD SHOP</Link>
                 </div>
             </div>
         </div>
