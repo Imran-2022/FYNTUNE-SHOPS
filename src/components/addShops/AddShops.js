@@ -18,7 +18,7 @@ const AddShops = () => {
     
     return (
         <>
-            <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="form" onSubmit={handleSubmit(onSubmit)} style={{display:"flex" ,gap:"20px"}}>
 
                 <input placeholder="Shop Name" {...register("shop_name", { required: true })} autoComplete="off" />
                 {errors.shop_name && <p>This field is required</p>}
@@ -53,12 +53,12 @@ const AddShops = () => {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <div>
-                        <p>Open Date</p>
+                        <p style={{marginBottom:"10px"}}>Open Date</p>
                         <input type="date" {...register("open", { required: true })} />
                         {errors.open && <p>This field is required</p>}
                     </div>
                     <div>
-                        <p>closing date</p>
+                        <p style={{marginBottom:"10px"}}>closing date</p>
                         <input type="date"  {...register("close", { required: true })} />
                         {errors.close && <p>This field is required</p>}
                     </div>

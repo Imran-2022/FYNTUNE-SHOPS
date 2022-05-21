@@ -11,7 +11,7 @@ const initialState = [
         shop_name: 'shop shop2',
         shop_id: '2',
         shop_area: 'Pune',
-        shop_category: 'Grocery',
+        shop_category: 'Butcher',
         open: '2022-05-26',
         close: '2022-05-10'
       },
@@ -19,7 +19,7 @@ const initialState = [
         shop_name: 'shop shop3',
         shop_id: '3',
         shop_area: 'Mumbai-Suburban',
-        shop_category: 'Grocery',
+        shop_category: 'Baker',
         open: '2022-06-03',
         close: '2022-06-01'
       },
@@ -27,7 +27,7 @@ const initialState = [
         shop_name: 'shop shop4',
         shop_id: '4',
         shop_area: 'Nashik',
-        shop_category: 'Grocery',
+        shop_category: 'Chemist',
         open: '2022-05-26',
         close: '2022-05-10'
       },
@@ -35,7 +35,7 @@ const initialState = [
         shop_name: 'shop shop5',
         shop_id: '5',
         shop_area: 'Nagpur',
-        shop_category: 'Grocery',
+        shop_category: 'Stationery-shop',
         open: '2022-06-03',
         close: '2022-06-01'
       },
@@ -51,7 +51,15 @@ const initialState = [
         shop_name: 'shop shop7',
         shop_id: '7',
         shop_area: 'Solapur',
-        shop_category: 'Grocery',
+        shop_category: 'Butcher',
+        open: '2022-06-03',
+        close: '2022-06-01'
+      },
+      {
+        shop_name: 'shop shop5',
+        shop_id: '8',
+        shop_area: 'Nagpur',
+        shop_category: 'Stationery-shop',
         open: '2022-06-03',
         close: '2022-06-01'
       },
