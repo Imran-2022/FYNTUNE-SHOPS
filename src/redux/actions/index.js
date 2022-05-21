@@ -15,3 +15,15 @@ export const decrement=() =>{
         }
     )
 }
+export const addtoCart=(description,id) =>{
+    return (
+        {
+            type:"addtoCart",
+            payload:{
+                description:description,
+                id:id
+            }
+            
+        }
+    )
+}
