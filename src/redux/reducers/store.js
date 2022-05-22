@@ -74,9 +74,7 @@ const store = (state = initialState, action) => {
     case 'shopsD':
       return state.filter(dt => dt.shop_id !== action.payload);
     case 'shopsU':
-      console.log(action.payload)
       const index = state.findIndex(dt => dt.shop_id === action.payload); //finding index of the item
-      console.log("first",index);
       const newArray = [...state]; //making a new array
       newArray[index].shop_name=action.shop_name;//changing value in the new array
       newArray[index].shop_id=action.shop_id;

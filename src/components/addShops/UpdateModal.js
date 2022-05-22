@@ -17,7 +17,6 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
     const storeLength = useSelector((state) => {
         return state.stores.filter(dt=>dt.shop_id===shop_id);
     })
-    console.log("object",storeLength[0]);
     return (
         <div className="Component components">
             <form className="update-form" onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" ,flexWrap:"wrap"}}>

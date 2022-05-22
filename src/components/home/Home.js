@@ -12,7 +12,6 @@ const Home = () => {
         filterByCategory: "ALL",
         filterByOpenOrClose: "Open/Close"
     })
-    console.log(commonFiler)
 
     useEffect(() => {
         if (commonFiler.filterByArea !== "ALL") {
@@ -24,7 +23,6 @@ const Home = () => {
                 }
             });
             setCommonShop(newshops)
-            console.log("not all area ", newshops)
         }
         else {
             let newshopss = shops.filter((element, x, y) => {
@@ -35,9 +33,7 @@ const Home = () => {
                 }
             });
             setCommonShop(newshopss)
-            console.log(" all area ", newshopss)
         }
-        console.log("commonshops", commonshops);
     }, [commonFiler])
 
     return (
