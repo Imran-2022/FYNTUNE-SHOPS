@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { shops, shopsD, shopsU } from '../../redux/actions';
 import "./AddShops.css"
+import ShopsList from './ShopsList';
 import UpdateModal from './UpdateModal';
 
 
@@ -85,29 +86,35 @@ const AddShops = () => {
 
 
             <div>
-                {
+                {/* {
                     storeLength.map((dt, idx) => {
-                        const { shop_name, shop_id } = dt
-                        return (<div key={idx} style={{ display: "flex", gap: "30px",flexWrap:"wrap" }}>
-                            <p>{shop_name}</p>
-                            <p>{shop_id}</p>
-                            <button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button>
-                            <button onClick={() => shopsUU(shop_id)}>update shops </button>
-                        </div>)
+                        const { shop_name, shop_id } = dt;
+
+                        return(
+                            <ShopsList shop_name={shop_name} shop_id={shop_id} idx={idx}/>
+                        )
+                        // return (<div key={idx} style={{ display: "flex", gap: "30px",flexWrap:"wrap" }}>
+                        //     <p>{shop_name}</p>
+                        //     <p>{shop_id}</p>
+                        //     <button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button>
+                        //     <button onClick={() => shopsUU(shop_id)}>update shops </button>
+                        // </div>)
                     })
-                }
+                } */}
+                <ShopsList/>
             </div>
-            <div  className="App">
+            {/* <div  className="App">
                 {showModal && <Modal>
                     <UpdateModal setShowModal={setShowModal} showModal={showModal} shop_id={updateid} />
                 </Modal>}
-            </div>
+            </div> */}
+            
         </>
     );
 };
 
 export default AddShops;
 
-const Modal = ({ children }) => <div className='Modal'>{children}</div>;
+// const Modal = ({ children }) => <div className='Modal'>{children}</div>;
 
 // modal from - https://codepen.io/baranovxyz/pen/pojLjjB?editors=0010
