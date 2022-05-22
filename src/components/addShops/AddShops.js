@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
-import { shops,shopsD } from '../../redux/actions';
+import { shops,shopsD,shopsU} from '../../redux/actions';
 import "./AddShops.css"
 const AddShops = () => {
     const storeLength = useSelector((state) => {
@@ -77,6 +77,7 @@ const AddShops = () => {
                             <p>{shop_name}</p>
                             <p>{shop_id}</p>
                             <button onClick={()=>dispatch(shopsD(shop_id))}>Delete shops </button>
+                            <button onClick={()=>dispatch(shopsU(shop_id))}>update shops </button>
                         </div>)
                     })
                 }
