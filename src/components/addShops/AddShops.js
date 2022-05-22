@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { shops} from '../../redux/actions';
-import "./AddShops.css"
+import "./Form.css"
+import "./Modal.css"
 import ShopsList from './ShopsList';
 
 const AddShops = () => {
@@ -26,11 +27,11 @@ const AddShops = () => {
     });
     return (
         <>
-            <form className="form" onSubmit={handleSubmit(onSubmit)} style={{ boxShadow:"rgba(0, 0, 0, 0.16) 0px 1px 4px", display: "flex", gap: "20px" ,width:"80%",margin:"auto",padding:"30px"}}>
+            <form className="form" onSubmit={handleSubmit(onSubmit)} >
                 <input placeholder="Shop Name" {...register("shop_name", { required: true })} autoComplete="off" />
                 {errors.shop_name && <p>This field is required</p>}
                 <input type="hidden" defaultValue={storeLength.length + 1} {...register("shop_id")} autoComplete="off" readOnly />
-                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
+                <div className='form-dropdown'>
                     <p>SHOPS AREA</p>
                     <select {...register("shop_area", { required: true })} className="p-1 mb-3">
                         <option value="Thane">Thane</option>
@@ -43,7 +44,7 @@ const AddShops = () => {
                     </select>
                     {errors.shop_area && <p>This field is required</p>}
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
+                <div className='form-dropdown'>
                     <p>SHOPS CATEGORY -</p>
                     <select {...register("shop_category", { required: true })} className="p-1 mb-3">
                         <option value="Grocery">Grocery</option>
@@ -56,7 +57,7 @@ const AddShops = () => {
                     {errors.shop_category && <p>This field is required</p>}
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
+                <div className='form-dropdown'>
                     <div>
                         <p style={{ marginBottom: "10px" }}>Open Date</p>
                         <input type="date" {...register("open", { required: true })} />

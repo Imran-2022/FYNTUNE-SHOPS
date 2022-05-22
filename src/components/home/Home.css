@@ -1,0 +1,49 @@
+.home {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    min-height: 73vh;
+
+}
+
+.home-p {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(71 57 57 / 71%);
+}
+
+.home-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.homeGrid {
+    display: flex;
+    gap: 30px;
+    min-width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    min-height: 40vh;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    
+}
+
+.homeGridShops{
+    padding: 10px;
+    min-width: 200px;
+    font-size: 20px;
+    background: #00f0ff;
+    background-image: linear-gradient( 95.2deg, rgb(253 1 177) 26.8%, rgb(253 1 177) 64% );
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.grid-shop-p{
+    padding: 5px;
+    background: #4f57c7;
+    border-radius:5px;
+}

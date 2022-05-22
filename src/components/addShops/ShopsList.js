@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { shopsD } from '../../redux/actions';
 import UpdateModal from './UpdateModal';
-
+import "./Table.css"
 const ShopsList = () => {
     const storeLength = useSelector((state) => {
         return state.stores;
