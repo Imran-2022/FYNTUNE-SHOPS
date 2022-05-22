@@ -11,4 +11,3 @@
 - REACT-ICONS
 - Redux
 - Moment
-- 
