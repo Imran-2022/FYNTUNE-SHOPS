@@ -72,10 +72,12 @@ const store = (state = initialState, action) => {
                 ...state,
                 action.payload
             ];
+        case 'shopsD':
+            return state.filter(dt=>dt.shop_id !==action.payload);
         default:
             return state;
     }
 
 }
-
+// state.filter(bug=>bug.id !==action.payload.id
 export default store;

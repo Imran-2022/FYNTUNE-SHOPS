@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
-import { shops } from '../../redux/actions';
+import { shops,shopsD } from '../../redux/actions';
 import "./AddShops.css"
 const AddShops = () => {
     const storeLength = useSelector((state) => {
@@ -15,6 +15,7 @@ const AddShops = () => {
         alert("successfully submitted")
         reset()
     };
+    
     
     return (
         <>
@@ -66,6 +67,20 @@ const AddShops = () => {
 
                 <input className="my-3" type="submit" value="ADD NEW SHOPS" />
             </form>
+
+
+            <div style={{ marginLeft: "250px",marginBottom:"100px"}}>
+                {
+                    storeLength.map((dt,idx)=>{
+                        const { shop_name, shop_id } = dt
+                        return(<div key={idx} style={{display:"flex",gap:"30px"}}>
+                            <p>{shop_name}</p>
+                            <p>{shop_id}</p>
+                            <button onClick={()=>dispatch(shopsD(shop_id))}>Delete shops </button>
+                        </div>)
+                    })
+                }
+            </div>
         </>
     );
 };

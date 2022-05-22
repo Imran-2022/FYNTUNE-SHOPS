@@ -24,3 +24,12 @@ export const shops=(shops) =>{
         }
     )
 }
+export const shopsD=(idd) =>{
+    return (
+        {
+            type:"shopsD",
+            payload:idd
+            
+        }
+    )
+}
