@@ -62,7 +62,23 @@ const initialState = [
     shop_category: 'Stationery-shop',
     open: '2022-06-03',
     close: '2022-06-01'
+  }, {
+    shop_name: 'shop shop7',
+    shop_id: '9',
+    shop_area: 'Solapur',
+    shop_category: 'Butcher',
+    open: '2022-06-03',
+    close: '2022-06-01'
+  },
+  {
+    shop_name: 'shop shop5',
+    shop_id: '10',
+    shop_area: 'Nagpur',
+    shop_category: 'Stationery-shop',
+    open: '2022-06-03',
+    close: '2022-06-01'
   }
+
 ]
 const store = (state = initialState, action) => {
   switch (action.type) {
