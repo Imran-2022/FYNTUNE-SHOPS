@@ -49,7 +49,7 @@ const Home = () => {
         <div style={{ margin: "50px" }}>
             <p>fyntune-shop</p>
             <p>length of the stores {storeLength.length}</p>
-            <div style={{ display: 'flex', gap: "10px" }}>
+            <div style={{ display: 'flex', gap: "10px",flexWrap:"wrap" }}>
                 <div className="catagories py-5 ms-5">
                     <label for="blood">Choose a Area : &nbsp;</label>
                     <select id="blood" name="bloodlist" onChange={(e) => setCommonFiler({

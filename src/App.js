@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Navbar toggle={toggle} />
-      {/* <Sidebar isopen={isopen} toggle={toggle} /> */}
+      <Sidebar isopen={isopen} toggle={toggle} />
 
       <Routes>
         <Route exact path="/" element={<Home/>} />
