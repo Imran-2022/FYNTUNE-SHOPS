@@ -26,7 +26,7 @@ const AddShops = () => {
     });
     return (
         <>
-            <form className="form" onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" ,width:"80%",margin:"auto"}}>
+            <form className="form" onSubmit={handleSubmit(onSubmit)} style={{ boxShadow:"rgba(0, 0, 0, 0.16) 0px 1px 4px", display: "flex", gap: "20px" ,width:"80%",margin:"auto",padding:"30px"}}>
                 <input placeholder="Shop Name" {...register("shop_name", { required: true })} autoComplete="off" />
                 {errors.shop_name && <p>This field is required</p>}
                 <input type="hidden" defaultValue={storeLength.length + 1} {...register("shop_id")} autoComplete="off" readOnly />
