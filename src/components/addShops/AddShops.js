@@ -5,26 +5,36 @@ import { shops} from '../../redux/actions';
 import "./Form.css"
 import "./Modal.css"
 import ShopsList from './ShopsList';
-
+import moment from 'moment';
 const AddShops = () => {
+    const [error,setError]=useState({
+        closeD:false
+    });
+
     const storeLength = useSelector((state) => {
         return state.stores;
     })
     const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = (data) => {
+        setError({...error,closeD:false})
+        const validateTime=moment(data.open).isBefore(data.close);
+       if(validateTime){
         dispatch(shops(data))
         console.table(data)
         alert("successfully submitted")
         reset()
+       }else{
+           setError({...error,closeD:true})
+       }
     };
-
     const [showModal, setShowModal] = useState(false);
     const handleKeyup = e => e.keyCode === 27 && setShowModal(false);
     useEffect(() => {
         if (showModal) window.addEventListener('keyup', handleKeyup);
         return () => window.removeEventListener('keyup', handleKeyup);
     });
+
     return (
         <>
             <form className="form" onSubmit={handleSubmit(onSubmit)} >
@@ -67,6 +77,7 @@ const AddShops = () => {
                         <p style={{ marginBottom: "10px" }}>closing date</p>
                         <input type="date"  {...register("close", { required: true })} />
                         {errors.close && <p>This field is required</p>}
+                        {error.closeD && <p>please close after open ??</p>}
                     </div>
                 </div>
 
