@@ -25,7 +25,7 @@ const ShopsList = () => {
             <table id="customers">
                 <thead>
                     <tr>
-                        <th>#NO</th>
+                        <th className="shopIDlist">#NO</th>
                         <th>SHOPS NAME</th>
                         <th>DELETE</th>
                         <th>UPDATE</th>
@@ -39,7 +39,7 @@ const ShopsList = () => {
 
                             return (
                                 <tr key={idx}>
-                                    <td>{shop_id}</td>
+                                    <td className="shopIDlist">{shop_id}</td>
                                     <td>{shop_name}</td>
                                     <td><button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button></td>
                                     <td><button onClick={() => shopsUU(shop_id)}>update shops </button></td>
