@@ -87,14 +87,14 @@ const Home = () => {
                     </select>
                 </div>
             </div>
-            <div className="homeGrid" style={{ display: 'flex', gap: "30px", minWidth:"80%", margin:"auto", flexWrap: "wrap",justifyContent: 'center',alignContent: 'center',minHeight:"60vh", marginTop:"50px" ,marginBottom:"50px"}}>
+            <div className="homeGrid" style={{ display: 'flex', gap: "30px", minWidth:"80%", margin:"auto", flexWrap: "wrap",justifyContent: 'center',alignContent: 'center',minHeight:"60vh", marginBottom:"70px",marginTop:"70px"}}>
                 {
                     commonshops && commonshops.map((dt, idx) => {
                         const { shop_name, shop_id, shop_area, shop_category, open, close } = dt
                         return (
-                            <div key={idx} style={{ padding: "10px", boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px", minWidth: "200px",fontSize: '20px'}}>
+                            <div key={idx} style={{ padding: "10px", boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px", minWidth: "200px",fontSize: '20px',background:"#00f0ff"}}>
 
-                                <p>shop : {shop_name}</p>
+                                <p style={{padding:"5px",background:"#c0ff1d"}}>shop : {shop_name}</p>
                                 <p>area : {shop_area}</p>
                                 <p>category : {shop_category}</p>
                                 <p>open date : {open}</p>
