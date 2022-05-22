@@ -1,46 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { shops, shopsD, shopsU } from '../../redux/actions';
-import "./AddShops.css"
-import UpdateModal from './UpdateModal';
 
-
-
-
-const AddShops = () => {
-    const storeLength = useSelector((state) => {
-        return state.stores;
-    })
+const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
     const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = (data) => {
-        dispatch(shops(data))
-        console.table(data)
+        dispatch(shopsU(data))
+        console.table("modal Data", data);
         alert("successfully submitted")
+        setShowModal(!showModal)
         reset()
     };
+    // dispatch(shopsU(d));
 
-    const [showModal, setShowModal] = useState(false);
-    const handleKeyup = e => e.keyCode === 27 && setShowModal(false);
-    const [updateid,setUpdateId] = useState('');
-    useEffect(() => {
-        if (showModal) window.addEventListener('keyup', handleKeyup);
-        return () => window.removeEventListener('keyup', handleKeyup);
-    });
-    const shopsUU = (d) => {
-        setUpdateId(d)
-        setShowModal(!showModal)
-    }
     return (
-        <>
+        <div className="Component">
             <form className="form" onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" }}>
-
                 <input placeholder="Shop Name" {...register("shop_name", { required: true })} autoComplete="off" />
                 {errors.shop_name && <p>This field is required</p>}
-                <input type="hidden" defaultValue={storeLength.length + 1} {...register("shop_id")} autoComplete="off" readOnly />
-
-
+                <input type="hidden" defaultValue={shop_id} {...register("shop_id")} autoComplete="off" readOnly />
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <p>SHOPS AREA</p>
                     <select {...register("shop_area", { required: true })} className="p-1 mb-3">
@@ -80,34 +60,11 @@ const AddShops = () => {
                     </div>
                 </div>
 
-                <input className="my-3" type="submit" value="ADD NEW SHOPS" />
+                <input className="my-3" type="submit"  value="Update SHOPS" />
             </form>
-
-
-            <div style={{ marginLeft: "250px", marginBottom: "100px" }}>
-                {
-                    storeLength.map((dt, idx) => {
-                        const { shop_name, shop_id } = dt
-                        return (<div key={idx} style={{ display: "flex", gap: "30px" }}>
-                            <p>{shop_name}</p>
-                            <p>{shop_id}</p>
-                            <button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button>
-                            <button onClick={() => shopsUU(shop_id)}>update shops </button>
-                        </div>)
-                    })
-                }
-            </div>
-            <div  className="App">
-                {showModal && <Modal>
-                    <UpdateModal setShowModal={setShowModal} showModal={showModal} shop_id={updateid} />
-                </Modal>}
-            </div>
-        </>
+            <button onClick={() => setShowModal(!showModal)}>close</button>
+        </div>
     );
 };
 
-export default AddShops;
-
-const Modal = ({ children }) => <div className='Modal'>{children}</div>;
-
-// modal from - https://codepen.io/baranovxyz/pen/pojLjjB?editors=0010
+export default UpdateModal;

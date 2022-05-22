@@ -79,8 +79,12 @@ const store = (state = initialState, action) => {
       const index = state.findIndex(dt => dt.shop_id === action.payload); //finding index of the item
       console.log("first",index);
       const newArray = [...state]; //making a new array
-      newArray[index].shop_name=action.shop_name //changing value in the new array
-      newArray[index].shop_id=action.shop_id
+      newArray[index].shop_name=action.shop_name;//changing value in the new array
+      newArray[index].shop_id=action.shop_id;
+      newArray[index].shop_area=action.shop_area;
+      newArray[index].shop_category=action.shop_category;
+      newArray[index].open=action.open;
+      newArray[index].close=action.close;
       return [...state]
     default:
       return state;

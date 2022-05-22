@@ -87,3 +87,42 @@ select option:nth-child(2n) {
     background: #ddd;
 }
 
+
+
+
+/* modal on the way ---- */
+.Modal {
+    /* fixed position will always show modal in the top left corner */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* z-index to show modal even if it is used before some other elements */
+    z-index: 5;
+    /* make modal fill whole window */
+    width: 100vw;
+    height: 100vh;
+    /* add some background to blur content behind modal */
+    background: rgba(7, 0, 0, 0.918);
+    /* center content inside modal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Component {
+    min-width: 50%;
+    height: 100vh;
+    background-color: rgb(1, 228, 248);
+    padding: 20px;
+  }
+/*   
+  .App {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    background: lightblue;
+  } */
+  
+  body {
+    margin: 0;
+  }

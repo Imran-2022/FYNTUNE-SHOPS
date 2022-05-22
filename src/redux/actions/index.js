@@ -33,18 +33,17 @@ export const shopsD = (idd) => {
         }
     )
 }
-export const shopsU = (idd) => {
+export const shopsU = (data) => {
     return (
         {
             type: "shopsU",
-            payload: idd,
-            shop_name: 'updated ',
-            shop_id: 'U8',
-            shop_area: 'Nagpur',
-            shop_category: 'Stationery-shop',
-            open: '2022-06-03',
-            close: '2022-06-01'
-
+            payload: data.shop_id,
+            shop_name: data.shop_name,
+            shop_id:  data.shop_id,
+            shop_area: data.shop_area,
+            shop_category: data.shop_category,
+            open: data.open,
+            close: data.close,
         }
     )
 }
