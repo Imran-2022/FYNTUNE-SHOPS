@@ -8,54 +8,13 @@ const Home = () => {
         return state.stores;
     })
 
-    const [users, setUsers] = useState(storeLength);
-    const [common, setCommon] = useState(users)
+    const [shops, setShops] = useState(storeLength);
     const [commonFiler, setCommonFiler] = useState({
         filterByArea: "ALL",
         filterByCategory: "ALL",
         filterByOpenOrClose: "Open/Close"
     })
     console.log(commonFiler)
-    useEffect(() => {
-        // filterByArea
-
-        //         if (commonFiler.filterByArea === "ALL") {
-        //             setCommon(common)
-        //         } else {
-        //             const filterByAreas = users.filter((x) => {
-        //                 // console.log("x", x)
-        //                 return x.shop_area === commonFiler.filterByArea;
-        //             })
-        //             setCommon(filterByAreas)
-        //         }
-        // // filterByCategory
-
-        //         if (commonFiler.filterByCategory === "ALL") {
-        //             setCommon(common)
-        //         } else {
-        //             const filterImages = users.filter((x) => {
-        //                 // console.log("x", x)
-        //                 return x.shop_category === commonFiler.filterByCategory;
-        //             })
-        //             setCommon(filterImages)
-        //         }
-        // Immutable.map(state.menu).filter(state.currentCategoryId===menu.category_id)
-
-        // arrayFilter.indexOf(listItem[element]) != -1
-        
-        const filterImages = users.filter((x) => {
-            // console.log("x", x)
-            return x.shop_category === commonFiler.filterByCategory;
-        })
-        const ff = filterImages.filter((x) => {
-            // console.log("x", x)
-            return x.shop_area === commonFiler.filterByArea;
-        })
-        setCommon(ff)
-        console.log("ff", ff)
-    }, [commonFiler])
-    
-    // filter((element, index, array) => { /* ... */ } )
     return (
         <div style={{ margin: "50px" }}>
             <p>fyntune-shop</p>
@@ -67,6 +26,7 @@ const Home = () => {
                         ...commonFiler, filterByArea: e.target.value
                     })}>
                         <option selected="selected" value="ALL">ALL</option>
+                        {/* <option value="none" selected disabled hidden>Select an Area</option> */}
                         <option value="Thane">Thane</option>
                         <option value="Pune">Pune</option>
                         <option value="Mumbai-Suburban">Mumbai-Suburban</option>
@@ -103,7 +63,7 @@ const Home = () => {
             </div>
             <div style={{ display: 'flex', gap: "30px", margin: "50px", flexWrap: "wrap", }}>
                 {
-                    common.map((dt, idx) => {
+                    shops.map((dt, idx) => {
                         const { shop_name, shop_id, shop_area, shop_category, open, close } = dt
                         // console.log(shop_name, shop_id, shop_area, shop_category, open, close)
                         return (
