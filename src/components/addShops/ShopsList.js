@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
-import { shops, shopsD, shopsU } from '../../redux/actions';
+import { shopsD } from '../../redux/actions';
 import UpdateModal from './UpdateModal';
 
 const ShopsList = () => {
@@ -9,11 +8,9 @@ const ShopsList = () => {
         return state.stores;
     })
     const dispatch = useDispatch();
- 
-
     const [showModal, setShowModal] = useState(false);
     const handleKeyup = e => e.keyCode === 27 && setShowModal(false);
-    const [updateid,setUpdateId] = useState('');
+    const [updateid, setUpdateId] = useState('');
     useEffect(() => {
         if (showModal) window.addEventListener('keyup', handleKeyup);
         return () => window.removeEventListener('keyup', handleKeyup);
@@ -22,43 +19,38 @@ const ShopsList = () => {
         setUpdateId(d)
         setShowModal(!showModal)
     }
+
     return (
         <div className="shopslist">
-
-
             <table id="customers">
                 <thead>
-                <tr>
-                    <th>#NO</th>
-                    <th>SHOPS NAME</th>
-                    <th>DELETE</th>
-                    <th>UPDATE</th>
-                </tr>
+                    <tr>
+                        <th>#NO</th>
+                        <th>SHOPS NAME</th>
+                        <th>DELETE</th>
+                        <th>UPDATE</th>
+                    </tr>
                 </thead>
                 <tbody>
 
-                {
-                    storeLength.map((dt, idx) => {
-                        const { shop_name, shop_id } = dt;
+                    {
+                        storeLength.map((dt, idx) => {
+                            const { shop_name, shop_id } = dt;
 
-                        return (
-                            
+                            return (
                                 <tr key={idx}>
                                     <td>{shop_id}</td>
                                     <td>{shop_name}</td>
                                     <td><button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button></td>
                                     <td><button onClick={() => shopsUU(shop_id)}>update shops </button></td>
                                 </tr>
-                           
-                        )
-
-                    })
-                }
-                 </tbody>
-
+                            )
+                        })
+                    }
+                </tbody>
 
             </table>
-            <div  className="App">
+            <div className="App">
                 {showModal && <Modal>
                     <UpdateModal setShowModal={setShowModal} showModal={showModal} shop_id={updateid} />
                 </Modal>}

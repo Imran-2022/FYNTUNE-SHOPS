@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
-import { shops, shopsD, shopsU } from '../../redux/actions';
+import { shopsU } from '../../redux/actions';
 
 const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
     const dispatch = useDispatch();
@@ -67,7 +67,6 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
 
                 <input className="my-3" type="submit"  value="Update SHOPS" />
                 <input className="my-3" type="submit"onClick={() => setShowModal(!showModal)}  value="close" />
-                {/* <button onClick={() => setShowModal(!showModal)}>close</button> */}
             </form>
             
         </div>
@@ -75,3 +74,5 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
 };
 
 export default UpdateModal;
+
+// modal from - https://codepen.io/baranovxyz/pen/pojLjjB?editors=0010

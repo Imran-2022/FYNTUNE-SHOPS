@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
-import { shops, shopsD, shopsU } from '../../redux/actions';
+import { shops} from '../../redux/actions';
 import "./AddShops.css"
 import ShopsList from './ShopsList';
-import UpdateModal from './UpdateModal';
-
-
-
 
 const AddShops = () => {
     const storeLength = useSelector((state) => {
@@ -24,15 +20,10 @@ const AddShops = () => {
 
     const [showModal, setShowModal] = useState(false);
     const handleKeyup = e => e.keyCode === 27 && setShowModal(false);
-    const [updateid,setUpdateId] = useState('');
     useEffect(() => {
         if (showModal) window.addEventListener('keyup', handleKeyup);
         return () => window.removeEventListener('keyup', handleKeyup);
     });
-    const shopsUU = (d) => {
-        setUpdateId(d)
-        setShowModal(!showModal)
-    }
     return (
         <>
             <form className="form" onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" }}>
@@ -84,37 +75,12 @@ const AddShops = () => {
                 <input className="my-3" type="submit" value="ADD NEW SHOPS" />
             </form>
 
-
             <div>
-                {/* {
-                    storeLength.map((dt, idx) => {
-                        const { shop_name, shop_id } = dt;
-
-                        return(
-                            <ShopsList shop_name={shop_name} shop_id={shop_id} idx={idx}/>
-                        )
-                        // return (<div key={idx} style={{ display: "flex", gap: "30px",flexWrap:"wrap" }}>
-                        //     <p>{shop_name}</p>
-                        //     <p>{shop_id}</p>
-                        //     <button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button>
-                        //     <button onClick={() => shopsUU(shop_id)}>update shops </button>
-                        // </div>)
-                    })
-                } */}
                 <ShopsList/>
             </div>
-            {/* <div  className="App">
-                {showModal && <Modal>
-                    <UpdateModal setShowModal={setShowModal} showModal={showModal} shop_id={updateid} />
-                </Modal>}
-            </div> */}
-            
         </>
     );
 };
 
 export default AddShops;
 
-// const Modal = ({ children }) => <div className='Modal'>{children}</div>;
-
-// modal from - https://codepen.io/baranovxyz/pen/pojLjjB?editors=0010

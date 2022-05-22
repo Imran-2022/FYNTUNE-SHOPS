@@ -1,6 +1,7 @@
 .form {
     max-width: 500px;
-    min-height: 90vh;
+    /* min-height: 90vh; */
+    margin-top: 50px !important;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -165,5 +166,8 @@ body {
 }
 
 .shopslist{
-    margin: 100px;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
