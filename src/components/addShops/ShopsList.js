@@ -41,8 +41,8 @@ const ShopsList = () => {
                                 <tr key={idx}>
                                     <td className="shopIDlist">{shop_id}</td>
                                     <td>{shop_name}</td>
-                                    <td><button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button></td>
-                                    <td><button onClick={() => shopsUU(shop_id)}>update shops </button></td>
+                                    <td><button style={{cursor: 'pointer'}} onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button></td>
+                                    <td><button style={{cursor: 'pointer'}} onClick={() => shopsUU(shop_id)}>update shops </button></td>
                                 </tr>
                             )
                         })

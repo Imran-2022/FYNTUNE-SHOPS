@@ -65,7 +65,7 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
                     </div>
                 </div>
 
-                <input className="my-3" type="submit"  value="Update SHOPS" />
+                <input  className="my-3" type="submit"  value="Update SHOPS" />
                 <input className="my-3" type="submit"onClick={() => setShowModal(!showModal)}  value="close" />
             </form>
             

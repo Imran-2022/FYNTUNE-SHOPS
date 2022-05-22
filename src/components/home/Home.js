@@ -44,7 +44,7 @@ const Home = () => {
     }, [commonFiler])
 
     return (
-        <div style={{ width:"80%",margin:"auto",marginTop:"50px" }}>
+        <div style={{ width:"80%",margin:"auto",marginTop:"50px",minHeight:"90vh" }}>
             <p style={{ marginBottom:"15px",fontSize: '20px',fontWeight:"bold",color:"rgb(71 57 57 / 71%)"}}>length of the shops {storeLength.length}</p>
             <div style={{ display: 'flex', gap: "10px",flexWrap:"wrap" , marginBottom:"20px"}}>
                 <div className="catagories py-5 ms-5">
@@ -87,7 +87,7 @@ const Home = () => {
                     </select>
                 </div>
             </div>
-            <div className="homeGrid" style={{ display: 'flex', gap: "30px", minWidth:"80%", margin:"auto", flexWrap: "wrap",justifyContent: 'center',alignContent: 'center',minHeight:"75vh"}}>
+            <div className="homeGrid" style={{ display: 'flex', gap: "30px", minWidth:"80%", margin:"auto", flexWrap: "wrap",justifyContent: 'center',alignContent: 'center',minHeight:"60vh", marginTop:"50px" ,marginBottom:"50px"}}>
                 {
                     commonshops && commonshops.map((dt, idx) => {
                         const { shop_name, shop_id, shop_area, shop_category, open, close } = dt
