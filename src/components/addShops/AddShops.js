@@ -49,7 +49,7 @@ const AddShops = () => {
             <form className="form" onSubmit={handleSubmit(onSubmit)} >
                 <input placeholder="Shop Name" {...register("shop_name", { required: true })} autoComplete="off" />
                 {errors.shop_name && <p>This field is required</p>}
-                {!errorN && <p>This field is required</p>}
+                {!errorN && <p>only alphabets, required</p>}
                 <input type="hidden" defaultValue={storeLength.length + 1} {...register("shop_id")} autoComplete="off" readOnly />
                 <div className='form-dropdown'>
                     <p>SHOPS AREA</p>
