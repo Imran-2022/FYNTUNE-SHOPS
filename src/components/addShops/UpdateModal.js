@@ -9,7 +9,7 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
     const onSubmit = (data) => {
         dispatch(shopsU(data))
         console.table("modal Data", data);
-        alert("successfully submitted")
+        alert("successfully updated !")
         setShowModal(!showModal)
         reset()
     };
@@ -19,8 +19,8 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
     })
     console.log("object",storeLength[0]);
     return (
-        <div className="Component">
-            <form className="form " onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" ,flexWrap:"wrap"}}>
+        <div className="Component components">
+            <form className="form formm " onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" ,flexWrap:"wrap"}}>
                 <input defaultValue={storeLength[0]?.shop_name} placeholder="Shop Name" {...register("shop_name", { required: true })} autoComplete="off" />
                 {errors.shop_name && <p>This field is required</p>}
                 <input type="hidden" defaultValue={shop_id} {...register("shop_id")} autoComplete="off" readOnly />

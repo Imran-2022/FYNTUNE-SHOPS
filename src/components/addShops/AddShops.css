@@ -1,12 +1,14 @@
 .form {
     max-width: 500px;
-    /* min-height: 90vh; */
     margin-top: 50px !important;
     display: flex;
     justify-content: center;
     margin: 0 auto;
     flex-direction: column;
 
+}
+.formm{
+    margin-top: 0px !important;
 }
 
 .form h1 {
@@ -22,7 +24,10 @@
     color: rgb(122, 113, 113);
     font-size: 15px;
 }
-
+.formm p {
+    color: rgb(250, 245, 245);
+    font-size: 15px;
+}
 .form p::before {
     display: inline;
     content: "";
@@ -38,6 +43,9 @@
     font-size: 14px;
     outline: none;
     border: 1px solid rgb(122, 113, 113);
+}
+.formm input{
+    margin-bottom: 0px !important;
 }
 
 .form select {
@@ -97,7 +105,7 @@ select option:nth-child(2n) {
 .Modal {
     /* fixed position will always show modal in the top left corner */
     position: fixed;
-    top: 0;
+    top: 10px;
     left: 0;
     /* z-index to show modal even if it is used before some other elements */
     z-index: 5;
@@ -115,13 +123,25 @@ select option:nth-child(2n) {
 .Component {
     margin: 100px !important;
     margin-top: 170px !important;
-    min-width: 50%;
-    height: 80vh;
-    background-color: rgb(1, 228, 248);
+    /* min-width: 50%;
+    height: 80vh; */
+    background-color: rgb(6 19 20);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.Components {
+    /* margin: 100px !important;
+    margin-top: 170px !important; */
+    /* min-width: 50%;
+    height: 80vh; */
+    background-color: rgb(6 19 20);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 /*   
@@ -152,6 +172,14 @@ body {
 #customers tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+#customers td:nth-child(3) {
+    text-align: center;
+
+}
+#customers td:nth-child(4) {
+    text-align: center;
+
+}
 
 #customers tr:hover {
     background-color: #ddd;
@@ -160,7 +188,7 @@ body {
 #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #aa04aa;
     color: white;
 }
