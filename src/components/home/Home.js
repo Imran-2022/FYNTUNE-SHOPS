@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { set } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 
 const Home = () => {
@@ -9,12 +10,41 @@ const Home = () => {
     })
 
     const [shops, setShops] = useState(storeLength);
+    const [commonshops, setCommonShop] = useState([]);
     const [commonFiler, setCommonFiler] = useState({
         filterByArea: "ALL",
         filterByCategory: "ALL",
         filterByOpenOrClose: "Open/Close"
     })
     console.log(commonFiler)
+
+    useEffect(() => {
+        if (commonFiler.filterByArea !== "ALL") {
+            let newshops = shops.filter(element => {
+                // 👇️ using AND (&&) operator
+                if (commonFiler.filterByCategory !== "ALL") {
+                    return element.shop_area === commonFiler.filterByArea && element.shop_category === commonFiler.filterByCategory;
+                } else {
+                    return element.shop_area === commonFiler.filterByArea;
+                }
+            });
+            setCommonShop(newshops)
+            console.log("not all area ", newshops)
+        }
+        else {
+            let newshopss = shops.filter((element,x,y) => {
+                // 👇️ using AND (&&) operator
+                if (commonFiler.filterByCategory !== "ALL") {
+                    return element.shop_category === commonFiler.filterByCategory;
+                } else {
+                    return y;
+                }
+            });
+            setCommonShop(newshopss)
+            console.log(" all area ", newshopss)
+        }
+        console.log("commonshops",commonshops);
+    }, [commonFiler])
     return (
         <div style={{ margin: "50px" }}>
             <p>fyntune-shop</p>
@@ -63,7 +93,7 @@ const Home = () => {
             </div>
             <div style={{ display: 'flex', gap: "30px", margin: "50px", flexWrap: "wrap", }}>
                 {
-                    shops.map((dt, idx) => {
+                    commonshops && commonshops.map((dt, idx) => {
                         const { shop_name, shop_id, shop_area, shop_category, open, close } = dt
                         // console.log(shop_name, shop_id, shop_area, shop_category, open, close)
                         return (
