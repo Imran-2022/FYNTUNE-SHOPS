@@ -20,11 +20,11 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
     console.log("object",storeLength[0]);
     return (
         <div className="Component">
-            <form className="form" onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" }}>
+            <form className="form " onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: "20px" ,flexWrap:"wrap"}}>
                 <input defaultValue={storeLength[0]?.shop_name} placeholder="Shop Name" {...register("shop_name", { required: true })} autoComplete="off" />
                 {errors.shop_name && <p>This field is required</p>}
                 <input type="hidden" defaultValue={shop_id} {...register("shop_id")} autoComplete="off" readOnly />
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
                     <p>SHOPS AREA</p>
                     <select {...register("shop_area", { required: true })} className="p-1 mb-3">
                     <option value={storeLength[0]?.shop_area} selected disabled hidden>{storeLength[0]?.shop_area}</option>
@@ -38,7 +38,7 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
                     </select>
                     {errors.shop_area && <p>This field is required</p>}
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
                     <p>SHOPS CATEGORY -</p>
                     <select {...register("shop_category", { required: true })} className="p-1 mb-3">
                     <option value={storeLength[0]?.shop_category} selected disabled hidden>{storeLength[0]?.shop_category}</option>
@@ -52,7 +52,7 @@ const UpdateModal = ({ setShowModal, showModal,shop_id }) => {
                     {errors.shop_category && <p>This field is required</p>}
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between',gap:"20px",flexWrap:"wrap" }}>
                     <div>
                         <p style={{ marginBottom: "10px" }}>Open Date</p>
                         <input defaultValue={storeLength[0]?.open}  type="date" {...register("open", { required: true })} />

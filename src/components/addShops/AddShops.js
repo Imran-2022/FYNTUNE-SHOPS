@@ -41,7 +41,7 @@ const AddShops = () => {
                 <input type="hidden" defaultValue={storeLength.length + 1} {...register("shop_id")} autoComplete="off" readOnly />
 
 
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
                     <p>SHOPS AREA</p>
                     <select {...register("shop_area", { required: true })} className="p-1 mb-3">
                         <option value="Thane">Thane</option>
@@ -54,7 +54,7 @@ const AddShops = () => {
                     </select>
                     {errors.shop_area && <p>This field is required</p>}
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
                     <p>SHOPS CATEGORY -</p>
                     <select {...register("shop_category", { required: true })} className="p-1 mb-3">
                         <option value="Grocery">Grocery</option>
@@ -67,7 +67,7 @@ const AddShops = () => {
                     {errors.shop_category && <p>This field is required</p>}
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between',flexWrap:"wrap" }}>
                     <div>
                         <p style={{ marginBottom: "10px" }}>Open Date</p>
                         <input type="date" {...register("open", { required: true })} />
@@ -84,11 +84,11 @@ const AddShops = () => {
             </form>
 
 
-            <div style={{ marginLeft: "250px", marginBottom: "100px" }}>
+            <div>
                 {
                     storeLength.map((dt, idx) => {
                         const { shop_name, shop_id } = dt
-                        return (<div key={idx} style={{ display: "flex", gap: "30px" }}>
+                        return (<div key={idx} style={{ display: "flex", gap: "30px",flexWrap:"wrap" }}>
                             <p>{shop_name}</p>
                             <p>{shop_id}</p>
                             <button onClick={() => dispatch(shopsD(shop_id))}>Delete shops </button>
